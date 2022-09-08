@@ -1,3 +1,8 @@
+h1 {
+    text-align: center;
+    width: 100%;
+}
+
 .appHeader {
   background-color: #282c34;
   min-height: 100vh;
@@ -7,6 +12,13 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.articlesToShow {
+    display: flex;
+    justify-content: space-between;
+    width: 190px;
+    margin: auto;
 }
 
 #articlesWrapper {

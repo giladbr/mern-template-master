@@ -24,6 +24,7 @@ const ArticleHeader = ({ title, urlToImage, publishedAt, source, author, url }) 
 
 function App() {
     const [articles, setArticles] = useState([]);
+    const [articlesToShow, setArticlesToShow] = useState(20);
 
     useEffect(() => {
         async function getData() {
@@ -36,15 +37,25 @@ function App() {
     }, []);
 
     return (
-        <section id="articlesWrapper">
-            {articles.map(({ description, ...articleProps }, i) => (
-                <div className="article" key={i}>
-                    <ArticleHeader {...articleProps} />
-                    <div>{description}</div>
-
-                </div>
-            ))}
-        </section>
+        <div id="main">
+            <h1>News Feed</h1>
+            <div className="articlesToShow">
+                <span>Articles to show:</span>
+            <select value={articlesToShow} onChange={(e)=>setArticlesToShow(e.target.value)}>
+                <option value={20}>20</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+            </select>
+            </div>
+            <section id="articlesWrapper">
+                {articles.slice(0,articlesToShow).map(({ description, ...articleProps }, i) => (
+                    <div className="article" key={i}>
+                        <ArticleHeader {...articleProps} />
+                        <div>{description}</div>
+                    </div>
+                ))}
+            </section>
+        </div>
     );
 }
 

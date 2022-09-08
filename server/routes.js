@@ -7,7 +7,6 @@ module.exports = () => {
   /**** Routes ****/
   router.get('/news', async (req, res) => {
     const news = await api.getNews();
-    console.log("NEWS:",news);
     res.json(news);
   });
 
