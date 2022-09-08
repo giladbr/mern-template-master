@@ -14,6 +14,10 @@ h1 {
   color: white;
 }
 
+.loader {
+    margin-top: 40vh;
+    font-weight: bold;
+}
 .articlesToShow {
     display: flex;
     justify-content: space-between;

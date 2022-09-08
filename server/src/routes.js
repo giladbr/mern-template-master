@@ -2,11 +2,11 @@ module.exports = () => {
   const express = require("express");
   const router = express.Router();
 
-  const api = require("./api");
+  const newsController = require("./newsController");
 
   /**** Routes ****/
   router.get('/news', async (req, res) => {
-    const news = await api.getNews();
+    const news = await newsController.getNews();
     res.json(news);
   });
 
